@@ -10,9 +10,9 @@
     mvn clean install 
     
 # TODO 
-    1).Need to enhance the code to read from csv file provided in resources/any external folder.
-    2).Write to a In-memory db using JpaItemWriter<> of Spring batch.
-    3).Implement Junit to perform Unit testing.
+   
+    1).Write to a In-memory db using JpaItemWriter<> of Spring batch.
+    2).Implement Junit to perform Unit testing.
     
 # Better modularity
  create a separate project to maintain all core Jpa entities and repostories and re-use it in Batch and rest-controller api.
