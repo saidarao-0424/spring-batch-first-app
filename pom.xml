@@ -29,5 +29,52 @@
 
 		<!-- End of Spring Batch dependencies -->
 	</dependencies>
+	
+		<!-- Define list of properties here -->
+
+	<properties>
+
+		<environment>h2</environment>
+	</properties>
+
+	<build>
+		<filters>
+			<filter>src/main/filters/filter_${environment}.properties</filter>
+		</filters>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+
+	</build>
+	<!-- List of profiles to activate/deactivate based on environment -->
+	<profiles>
+		<profile>
+			<id>h2</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<environment>h2</environment>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>com.h2database</groupId>
+					<artifactId>h2</artifactId>
+				</dependency>
+			</dependencies>
+		</profile>
+
+		<profile>
+			<id>oracle</id>
+			<properties>
+				<environment>oracle</environment>
+			</properties>
+			<!-- need to add Oracle related dependecies. -->
+		</profile>
+	</profiles>
 
 </project>

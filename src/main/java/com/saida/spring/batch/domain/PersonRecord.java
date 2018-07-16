@@ -1,9 +1,12 @@
 package com.saida.spring.batch.domain;
 import java.io.Serializable;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Patient record from the input file
  */
+ @Component
 public class PersonRecord implements Serializable {
 
 	private static final long serialVersionUID = 1L;

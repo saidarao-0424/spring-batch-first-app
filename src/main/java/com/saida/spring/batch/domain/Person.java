@@ -1,7 +1,8 @@
 package com.saida.spring.batch.domain;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.util.Date;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +14,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "patient")
+@Table(name = "PERSON")
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -21,7 +22,7 @@ public class Person implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
 	@SequenceGenerator(name = "sequenceGenerator")
-	@Column(name = "PATIENT_ID")
+	@Column(name = "PERSON_ID")
 	private Long id;
 
 	@NotNull
@@ -64,7 +65,7 @@ public class Person implements Serializable {
 
 	@NotNull
 	@Column(name = "BRTH_DATE", nullable = false)
-	private LocalDate birthDate;
+	private Date birthDate;
 
 	@NotNull
 	@Column(name = "SSC", nullable = false)
@@ -76,7 +77,7 @@ public class Person implements Serializable {
 
 	public Person(@NotNull String sourceId, @NotNull String firstName, String middleInitial, @NotNull String lastName,
 			String emailAddress, @NotNull String phoneNumber, @NotNull String street, @NotNull String city,
-			@NotNull String state, @NotNull String zipCode, @NotNull LocalDate birthDate,
+			@NotNull String state, @NotNull String zipCode, @NotNull Date birthDate,
 			@NotNull String socialSecurityNumber) {
 		super();
 		this.sourceId = sourceId;
@@ -95,7 +96,7 @@ public class Person implements Serializable {
 
 	public Person(Long id, @NotNull String sourceId, @NotNull String firstName, String middleInitial,
 			@NotNull String lastName, String emailAddress, @NotNull String phoneNumber, @NotNull String street,
-			@NotNull String city, @NotNull String state, @NotNull String zipCode, @NotNull LocalDate birthDate,
+			@NotNull String city, @NotNull String state, @NotNull String zipCode, @NotNull Date birthDate,
 			@NotNull String socialSecurityNumber) {
 		super();
 		this.id = id;
@@ -281,7 +282,7 @@ public class Person implements Serializable {
 	/**
 	 * @return the birthDate
 	 */
-	public LocalDate getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
@@ -289,7 +290,7 @@ public class Person implements Serializable {
 	 * @param birthDate
 	 *            the birthDate to set
 	 */
-	public void setBirthDate(LocalDate birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
