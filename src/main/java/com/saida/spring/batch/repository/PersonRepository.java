@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 import com.saida.spring.batch.domain.Person;
 
 @Repository
-public interface PatientRepository extends JpaRepository<Person, Long> {
+public interface PersonRepository extends JpaRepository<Person, Long> {
 }
