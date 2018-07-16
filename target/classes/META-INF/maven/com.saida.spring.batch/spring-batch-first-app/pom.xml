@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.saida.spring.batch</groupId>
+	<artifactId>spring-batch-first-app</artifactId>
+
+
+	<!-- rest-parent declared to separate all common dependencies. -->
+	<parent>
+		<relativePath>../rest-parent/pom.xml</relativePath>
+		<groupId>com.saida.spring.rest</groupId>
+		<artifactId>rest-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+
+	<dependencies>
+		<!-- Start: Add Spring batch dependencies here.. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-batch</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.batch</groupId>
+			<artifactId>spring-batch-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- End of Spring Batch dependencies -->
+	</dependencies>
+
+</project>
