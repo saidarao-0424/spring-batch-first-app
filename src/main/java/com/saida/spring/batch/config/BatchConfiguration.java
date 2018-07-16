@@ -11,6 +11,7 @@ import org.springframework.batch.core.configuration.annotation.JobBuilderFactory
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.core.configuration.support.JobRegistryBeanPostProcessor;
+import org.springframework.batch.core.launch.support.RunIdIncrementer;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.LineMapper;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
@@ -50,7 +51,8 @@ public class BatchConfiguration {
 
 	@Bean
 	public Job job(Step step) throws Exception {
-		return this.jobBuilderFactory.get(Constants.JOB_NAME).validator(validator()).start(step).build();
+		return this.jobBuilderFactory.get(Constants.JOB_NAME).validator(validator()).incrementer(new RunIdIncrementer())
+				.start(step).build();
 	}
 
 	@Bean
@@ -88,7 +90,6 @@ public class BatchConfiguration {
 		return new JobParametersValidator() {
 			@Override
 			public void validate(JobParameters parameters) throws JobParametersInvalidException {
-		
 
 			}
 		};
