@@ -11,10 +11,15 @@
     
 # TODO 
    
-    1).Write to a In-memory db using JpaItemWriter<> of Spring batch.
-    2).Implement Junit to perform Unit testing.
+    
+    1).Implement Junit to perform Unit testing.
+    2).Enhance application to use Environment variable and Application Properties class
+    3).Define a Datasource based on Environment settings.
+    4).Configure Own transaction manager.
+    5).Implement multi-step based chunk based processing
+    6).add logging aspect to measure number of processed records.
     
 # Better modularity
- create a separate project to maintain all core Jpa entities and repostories and re-use it in Batch and rest-controller api.
+ create a separate project to maintain all core Jpa entities and repositories and re-use it in Batch and rest-controller api.
 
 
